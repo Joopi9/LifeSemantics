@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lifesemantics.app.repository.LoginXmlRepository">
+
+	<!-- 로그인 처리 -->
+	<select id="selectLoginId" parameterType="string" resultType="com.lifesemantics.app.model.MemberOutVO" >
+	SELECT ID
+		 , MEMBER_ID
+		 , PASSWORD
+		 , MEMBER_EMAIL
+		 , REG_DATE
+		 , REG_ID
+		 , MOD_DATE
+		 , MOD_ID
+	  FROM MEMBER
+	 WHERE MEMBER_ID = #{memberId}
+	</select>
+
+</mapper>
